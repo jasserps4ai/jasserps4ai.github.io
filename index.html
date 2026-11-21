@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Jasser Albasuney — Cybersecurity & Networks Engineering Technology Student at SUT University | Aspiring Security Researcher & Penetration Testing Scope." />
   <title>Jasser Albasuney | Cybersecurity &amp; Security Research Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container nav-container">
       <a href="#top" class="brand">
@@ -94,7 +97,7 @@
         </div>
 
         <div class="cards-grid pentest-grid">
-          <article class="panel scope-card">
+          <article class="panel scope-card reveal">
             <div class="card-kicker">
               <span class="mono-code">TARGET // WEB</span>
             </div>
@@ -109,7 +112,7 @@
             </ul>
           </article>
 
-          <article class="panel scope-card">
+          <article class="panel scope-card reveal">
             <div class="card-kicker">
               <span class="mono-code">TARGET // API</span>
             </div>
@@ -124,7 +127,7 @@
             </ul>
           </article>
 
-          <article class="panel scope-card">
+          <article class="panel scope-card reveal">
             <div class="card-kicker">
               <span class="mono-code">TARGET // MOBILE (iOS &amp; ANDROID)</span>
             </div>
@@ -139,7 +142,7 @@
             </ul>
           </article>
 
-          <article class="panel scope-card">
+          <article class="panel scope-card reveal">
             <div class="card-kicker">
               <span class="mono-code">TARGET // NETWORKS &amp; HOME</span>
             </div>
@@ -154,7 +157,7 @@
             </ul>
           </article>
 
-          <article class="panel scope-card">
+          <article class="panel scope-card reveal">
             <div class="card-kicker">
               <span class="mono-code">TARGET // AI &amp; LLM</span>
             </div>
@@ -171,7 +174,7 @@
         </div>
 
         <!-- Interactive Scope Previewer (100% Client-Side, Free) -->
-        <div class="scope-explorer" aria-label="Interactive Assessment Scope Preview">
+        <div class="scope-explorer reveal" aria-label="Interactive Assessment Scope Preview">
           <div class="scope-explorer-head">
             <div>
               <span class="mono-label">INTERACTIVE_SCOPE_PREVIEW</span>
@@ -218,7 +221,7 @@
         </div>
 
         <div class="cards-grid three-col">
-          <article class="panel">
+          <article class="panel reveal">
             <h3>Networking &amp; Network Security</h3>
             <p>Understanding network architectures, protocols, traffic analysis, and defensive network security controls.</p>
             <ul class="tag-list">
@@ -228,7 +231,7 @@
             </ul>
           </article>
 
-          <article class="panel">
+          <article class="panel reveal">
             <h3>Linux &amp; Data Querying</h3>
             <p>Command-line operations, system administration basics, log inspection, and structured querying for security investigations.</p>
             <ul class="tag-list">
@@ -238,7 +241,7 @@
             </ul>
           </article>
 
-          <article class="panel">
+          <article class="panel reveal">
             <h3>Vulnerability Research &amp; Ethical Hacking</h3>
             <p>Structured reconnaissance, identifying common vulnerabilities, and evaluating security posture using ethical methodology.</p>
             <ul class="tag-list">
@@ -248,7 +251,7 @@
             </ul>
           </article>
 
-          <article class="panel">
+          <article class="panel reveal">
             <h3>Security Analysis &amp; Detection</h3>
             <p>Analyzing security alerts, understanding SIEM workflows, intrusion detection concepts, and risk mitigation strategies.</p>
             <ul class="tag-list">
@@ -258,7 +261,7 @@
             </ul>
           </article>
 
-          <article class="panel">
+          <article class="panel reveal">
             <h3>Security Automation with Python</h3>
             <p>Writing foundational Python scripts to support repetitive cybersecurity checks, parsing, and analysis workflows.</p>
             <ul class="tag-list">
@@ -268,7 +271,7 @@
             </ul>
           </article>
 
-          <article class="panel">
+          <article class="panel reveal">
             <h3>AI &amp; LLM Security</h3>
             <p>Studying generative AI architectures, identifying AI/LLM vulnerabilities, and mitigating adversarial risks in AI workflows.</p>
             <ul class="tag-list">
@@ -292,7 +295,7 @@
 
         <div class="cert-stack">
           <!-- Certificate 1: AI Security -->
-          <article class="cert-card">
+          <article class="cert-card reveal">
             <div class="cert-top">
               <div>
                 <span class="cert-badge">Specialization Certificate</span>
@@ -301,9 +304,12 @@
               </div>
               <div class="cert-meta">
                 <span class="cert-date">Completed: Oct 9, 2026</span>
-                <a href="https://coursera.org/verify/specialization/A81NPXFSAG6E" target="_blank" rel="noopener noreferrer" class="verify-link">
-                  Verify Credential &nearr;
-                </a>
+                <div class="cert-actions">
+                  <a href="https://coursera.org/verify/specialization/A81NPXFSAG6E" target="_blank" rel="noopener noreferrer" class="verify-link">
+                    Verify Credential &nearr;
+                  </a>
+                  <button type="button" class="copy-btn" data-copy="https://coursera.org/verify/specialization/A81NPXFSAG6E">Copy URL</button>
+                </div>
               </div>
             </div>
 
@@ -330,7 +336,7 @@
           </article>
 
           <!-- Certificate 2: Google Cybersecurity -->
-          <article class="cert-card">
+          <article class="cert-card reveal">
             <div class="cert-top">
               <div>
                 <span class="cert-badge">Professional Certificate</span>
@@ -339,9 +345,12 @@
               </div>
               <div class="cert-meta">
                 <span class="cert-date">Completed: Oct 6, 2026</span>
-                <a href="https://coursera.org/verify/professional-cert/60Q6QKC52NHC" target="_blank" rel="noopener noreferrer" class="verify-link">
-                  Verify Credential &nearr;
-                </a>
+                <div class="cert-actions">
+                  <a href="https://coursera.org/verify/professional-cert/60Q6QKC52NHC" target="_blank" rel="noopener noreferrer" class="verify-link">
+                    Verify Credential &nearr;
+                  </a>
+                  <button type="button" class="copy-btn" data-copy="https://coursera.org/verify/professional-cert/60Q6QKC52NHC">Copy URL</button>
+                </div>
               </div>
             </div>
 
@@ -374,7 +383,7 @@
           </article>
 
           <!-- Certificate 3: Cisco Ethical Hacker -->
-          <article class="cert-card">
+          <article class="cert-card reveal">
             <div class="cert-top">
               <div>
                 <span class="cert-badge">Course Completion Certificate</span>
@@ -407,18 +416,28 @@
           <p>Official links for code repositories and professional profile.</p>
         </div>
 
-        <div class="links-grid">
-          <a href="https://github.com/jasserps4ai" target="_blank" rel="noopener noreferrer" class="link-card">
-            <span class="link-platform">GitHub</span>
-            <span class="link-handle">github.com/jasserps4ai</span>
-            <span class="link-arrow">&nearr;</span>
-          </a>
+        <div class="links-grid two-col">
+          <div class="link-card reveal">
+            <a href="https://github.com/jasserps4ai" target="_blank" rel="noopener noreferrer" class="link-main">
+              <span class="link-platform">GitHub</span>
+              <span class="link-handle">github.com/jasserps4ai</span>
+            </a>
+            <div class="link-card-actions">
+              <button type="button" class="copy-btn" data-copy="https://github.com/jasserps4ai">Copy Link</button>
+              <a href="https://github.com/jasserps4ai" target="_blank" rel="noopener noreferrer" class="link-arrow" aria-label="Open GitHub">&nearr;</a>
+            </div>
+          </div>
 
-          <a href="https://www.linkedin.com/in/jasser-albasuney" target="_blank" rel="noopener noreferrer" class="link-card">
-            <span class="link-platform">LinkedIn</span>
-            <span class="link-handle">linkedin.com/in/jasser-albasuney</span>
-            <span class="link-arrow">&nearr;</span>
-          </a>
+          <div class="link-card reveal">
+            <a href="https://www.linkedin.com/in/jasser-albasuney" target="_blank" rel="noopener noreferrer" class="link-main">
+              <span class="link-platform">LinkedIn</span>
+              <span class="link-handle">linkedin.com/in/jasser-albasuney</span>
+            </a>
+            <div class="link-card-actions">
+              <button type="button" class="copy-btn" data-copy="https://www.linkedin.com/in/jasser-albasuney">Copy Link</button>
+              <a href="https://www.linkedin.com/in/jasser-albasuney" target="_blank" rel="noopener noreferrer" class="link-arrow" aria-label="Open LinkedIn">&nearr;</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
