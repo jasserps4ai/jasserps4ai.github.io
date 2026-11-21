@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
+  // Mobile navigation toggle
   const toggleBtn = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
 
@@ -21,12 +22,79 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Top scroll progress bar
+  const progressBar = document.getElementById("scroll-progress");
+  if (progressBar) {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      progressBar.style.width = `${pct}%`;
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // Subtle reveal on scroll (respecting reduced motion)
+  const revealEls = document.querySelectorAll(".reveal");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach((el) => el.classList.add("visible"));
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+  }
+
+  // Copy buttons for contact number, profile links, and verification URLs
+  document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const value = btn.getAttribute("data-copy");
+      if (!value) return;
+      const originalText = btn.textContent;
+
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(value);
+        } else {
+          const temp = document.createElement("textarea");
+          temp.value = value;
+          temp.setAttribute("readonly", "");
+          temp.style.position = "absolute";
+          temp.style.left = "-9999px";
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand("copy");
+          document.body.removeChild(temp);
+        }
+        btn.textContent = "Copied";
+      } catch (_) {
+        btn.textContent = "Copy failed";
+      }
+
+      setTimeout(() => {
+        btn.textContent = originalText;
+      }, 1500);
+    });
+  });
+
+  // Interactive Penetration Testing Scope Previewer
   const scopeData = {
     web: {
       title: "Web Applications Penetration Testing",
       code: "SCOPE-01 // WEB",
       summary:
-        "Focuses on mapping application attack surface, testing authentication and authorization boundaries, validating user inputs, and documenting clear findings.",
+        "Focuses on mapping application attack surface, testing authentication and authorization boundaries, validating user inputs, and verifying remediation steps with clear reproducible notes.",
       items: [
         "Authentication, session handling, and access control verification",
         "Input validation, injection surfaces, and workflow logic checks",
